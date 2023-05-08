@@ -16,10 +16,10 @@ app.component('product-display', {
       
       <h1>{{ title }}</h1>
 
-      <p v-if="inStock">In Stock</p>
-      <p v-else>Out of Stock</p>
+      <p v-if="inStock">En estoc</p>
+      <p v-else>Fora d'estoc</p>
 
-      <p>Shipping: {{ shipping }}</p>
+      <p>Enviament: {{ shipping }}</p>
       <ul>
         <li v-for="detail in details">{{ detail }}</li>
       </ul>
@@ -32,7 +32,7 @@ app.component('product-display', {
       :style="{backgroundColor: variant.color}">
     </div>
 
-    <button class="button" :class="{ disabledButton: !inStock }" :disabled="!inStock" v-on:click="addToCart">Add to Cart</button>
+    <button class="button" :class="{ disabledButton: !inStock }" :disabled="!inStock" v-on:click="addToCart">Afegeix</button>
     </div>
     </div>
   </div>
@@ -41,13 +41,13 @@ app.component('product-display', {
 </div>`,
     data() {
         return {
-            product: 'Socks',
-            brand: 'Vue Mastery',
+            product: 'Andreu',
+            brand: 'Mini Botiga',
             selectedVariant: 0,
-            details: ['50% cotton', '30% wool', '20% polyester'],
+            details: ['- Versàtil', '- Lleugera', '- Innovadora'],
             variants: [
-                { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 50 },
-                { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg', quantity: 0 }
+                { id: 2234, color: 'red', image: './assets/images/spark1.png', quantity: 50 },
+                { id: 2235, color: 'green', image: './assets/images/spark2.png', quantity: 0 }
             ],
             reviews: []
         }
@@ -75,7 +75,7 @@ app.component('product-display', {
         },
         shipping() {
             if (this.premium) {
-                return 'Free'
+                return 'Gratuït'
             }
             return 2.99
         }
