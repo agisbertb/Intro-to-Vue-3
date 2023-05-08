@@ -99,7 +99,7 @@ p {
 .product-display {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1rem; 
 }
 
 .product-container {
